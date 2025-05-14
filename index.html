@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <div class="color-buttons">
+        <button id="red-button"></button>
+        <button id="yellow-button"></button>
+        <button id="green-button"></button>
+      </div>
+      <div class="calculator-display">0</div>
+      <div class="calculator-buttons">
+        <button class="button function clear">C</button>
+        <button class="button function toggle-sign">±</button>
+        <button class="button function percent">%</button>
+        <button class="button operator">/</button>
+
+        <button class="button number">7</button>
+        <button class="button number">8</button>
+        <button class="button number">9</button>
+        <button class="button operator">*</button>
+
+        <button class="button number">4</button>
+        <button class="button number">5</button>
+        <button class="button number">6</button>
+        <button class="button operator">-</button>
+
+        <button class="button number">1</button>
+        <button class="button number">2</button>
+        <button class="button number">3</button>
+        <button class="button operator">+</button>
+
+        <button class="button number" style="width: 49%">0</button>
+        <button class="button dot">.</button>
+        <button class="button result">=</button>
+      </div>
+    </div>
+    <div class="results-container">
+      <p>Calculation History</p>
+      <div class="results-list"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

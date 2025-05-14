@@ -1,0 +1,132 @@
+/* 모든 요소의 기본 여백 제거 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML과 Body의 기본 설정 */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #121214;
+}
+
+/* calculator-container */
+.calculator-container {
+  padding: 12px;
+  width: 450px;
+  background-color: #1a1a1e;
+  border: white solid 1px;
+}
+
+/* color-buttons */
+.color-buttons {
+  margin: 8px;
+  padding: 2px;
+}
+.color-buttons > button {
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  border-radius: 50%;
+  border-style: none;
+}
+#red-button {
+  background-color: #fe6058;
+}
+#yellow-button {
+  background-color: #ffbb32;
+}
+#green-button {
+  background-color: #28c740;
+}
+
+/* calculator-display */
+.calculator-display {
+  margin: 8px;
+  padding: 12px;
+  height: 80px;
+  border: white solid 1px;
+  background-color: #121214;
+  color: #ffffff;
+  font-size: 32px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* calculator-buttons */
+.calculator-buttons {
+  margin: 8px;
+  height: 500px;
+  border: white solid 1px;
+  background-color: #121214;
+}
+.calculator-buttons > button {
+  width: 24%;
+  height: 20%;
+  background-color: #ffffff0a;
+  color: #ffffff;
+  font-size: 20px;
+}
+.calculator-buttons > button:hover {
+  background-color: #ffffff00;
+}
+.calculator-buttons > button:active {
+  background-color: #5865f2;
+}
+
+/* results-container */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 500px;
+  margin-left: 100px;
+  color: #ffffff;
+  background-color: #1a1a1e;
+  border: white solid 1px;
+}
+.results-container > p {
+  padding: 12px 0 12px 0;
+  letter-spacing: 1.2px;
+}
+
+.results-list {
+  height: 430px;
+  width: 290px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.results-list::-webkit-scrollbar {
+  width: 6px;
+}
+.results-list::-webkit-scrollbar-track {
+  /* 스크롤바가 움직이는 배경 영역 */
+  background: transparent;
+}
+.results-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* 스크롤 바 색 */
+  border-radius: 4px;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  padding: 16px;
+  border-bottom: rgb(191, 191, 191) solid 0.5px;
+  margin-bottom: 4px;
+}
+
+/* 웹 크기에 따른 results-container 속성 */
+@media (max-width: 800px) {
+  .results-container {
+    display: none;
+  }
+}
