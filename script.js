@@ -41,6 +41,9 @@ function calculate(num1, operator, num2) {
       result = num1 / num2;
       break;
   }
+  if (result === Infinity) {
+    result = 0;
+  }
 }
 
 // 버튼 클릭 시 해당 버튼의 값을 콘솔에 출력
@@ -102,7 +105,7 @@ function clickButton(event) {
 
   // 연산기호 클릭 시 디스플레이의 값, 연산기호 기억
   else if (button.classList.contains("operator")) {
-    if (firstOperand === null) {
+    if (firstOperand === null || firstOperand === 0) {
       firstOperand = display.textContent;
       console.log("firstOperand:", firstOperand);
 
