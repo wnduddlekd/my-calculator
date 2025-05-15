@@ -45,6 +45,7 @@ function calculate(num1, operator, num2) {
   if (result === Infinity) {
     result = 0;
   }
+  result = parseFloat(result.toFixed(10));
 }
 
 // 버튼 클릭 시 해당 버튼의 값을 콘솔에 출력
