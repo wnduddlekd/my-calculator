@@ -128,6 +128,7 @@ function clickButton(event) {
       operator = button.textContent; // 연산기호 할당, 디스플레이 리셋
       resetDisplay = true;
       console.log("operator:", operator);
+      percentageValue = false; // 백분율 초기화
     } else {
       // 연산기호를 또 누르는 경우
       secondOperand = display.textContent;
@@ -157,6 +158,7 @@ function clickButton(event) {
         operator = button.textContent; // 연산기호 할당, 디스플레이 리셋
         resetDisplay = true;
         console.log(operator);
+        percentageValue = false; // 백분율 초기화
       }
     }
   }
