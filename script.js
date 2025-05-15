@@ -22,8 +22,9 @@ let firstOperand = null;
 let secondOperand = null;
 let operator = null;
 let result = null;
-let resetDisplay = true;
-let percentageValue = false;
+let resetDisplay = true; // 디스플레이 초기화
+let percentageValue = false; // 백분율
+let shakeCount = 0; // 글자입력제한
 
 // operator 연산함수
 function calculate(num1, operator, num2) {
@@ -53,12 +54,26 @@ function clickButton(event) {
   `2`;
   // number 클래스를 디스플레이에 표시
   if (button.classList.contains("number")) {
-    // 디스플레이 초기값인 "0"을 지우고 디스플레이에 표시
-    if (resetDisplay === true) {
-      display.textContent = text;
-      resetDisplay = false;
+    if (display.textContent.length < 16) {
+      // 디스플레이 초기값인 "0"을 지우고 디스플레이에 표시
+      if (resetDisplay) {
+        display.textContent = text;
+        resetDisplay = false;
+      } else {
+        display.textContent += text;
+      }
     } else {
-      display.textContent += text;
+      display.classList.add("shake");
+
+      // 애니메이션 후 클래스 제거 (반복 동작 가능하게)
+      setTimeout(() => {
+        display.classList.remove("shake");
+      }, 300);
+      // 10번 이상 시도하면 알림
+      shakeCount++;
+      if (shakeCount >= 10) {
+        alert("입력은 최대 16자리까지 가능합니다. 더 이상 입력할 수 없어요!");
+      }
     }
   }
 
@@ -81,6 +96,7 @@ function clickButton(event) {
     result = null;
     resetDisplay = true;
     percentageValue = false;
+    shakeCount = 0;
   }
 
   // 부호 전환
@@ -176,8 +192,7 @@ function clickButton(event) {
       result = null;
       resetDisplay = true;
       percentageValue = false;
+      shakeCount = 0;
     }
   }
 }
-
-// 부동소수점, 숫자 무한추가 버그
